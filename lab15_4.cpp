@@ -17,3 +17,20 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a, int &b, int &c, int &d) {
+    int A[] = {a, b, c, d};
+    int n = sizeof(A) / sizeof(A[0]);
+    if (n > 1) {
+        for (int i = 0; i < n - 1; i++) {
+            int j = i + rand()%(n - i);
+            int t = A[j];
+            A[j] = A[i];
+            A[i] = t;
+        }
+    }
+    a = A[0];
+    b = A[1];
+    c = A[2];
+    d = A[3];
+}
